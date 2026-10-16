@@ -1,0 +1,191 @@
+/* --- VARIABLES GLOBALES - FAST CLEAN (Hilo & Aguja) --- */
+:root {
+    --primary-color: #0284c7; /* Azul Fresco Lavandería */
+    --primary-hover: #0369a1; /* Azul profundo */
+    --secondary-color: #0f172a; /* Azul noche profesional */
+    --accent-mint: #10b981; /* Verde menta/lima limpieza */
+    --accent-light: #e0f2fe; /* Azul cielo suave */
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --bg-dark: #0f172a;
+    --bg-darker: #020617;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --btn-text: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+html { scroll-behavior: smooth; }
+body { color: var(--text-dark); line-height: 1.6; background-color: var(--bg-white); }
+
+/* UTILIDADES */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 85px 0; }
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: var(--bg-dark); }
+.text-white { color: white !important; }
+.text-primary { color: var(--accent-mint) !important; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.section-title { font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; color: var(--secondary-color); letter-spacing: -0.5px; }
+.section-subtitle { color: var(--text-light); font-size: 1.1rem; margin-bottom: 40px; }
+.title-underline { width: 75px; height: 5px; background-color: var(--primary-color); margin-bottom: 30px; border-radius: 3px; }
+
+/* BOTONES */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 30px; border-radius: 30px; font-weight: 700; text-decoration: none; transition: var(--transition); cursor: pointer; border: 2px solid transparent; font-size: 0.98rem; }
+.btn-primary { background-color: var(--accent-mint); color: #022c22; }
+.btn-primary:hover { background-color: #059669; color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); }
+.btn-outline { background-color: transparent; border-color: white; color: white; }
+.btn-outline:hover { background-color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-3px); }
+
+/* NAVEGACIÓN */
+.navbar { position: fixed; top: 0; width: 100%; z-index: 1000; transition: var(--transition); background-color: transparent; padding: 18px 0; }
+.navbar.scrolled { background-color: var(--bg-dark); box-shadow: 0 4px 20px rgba(0,0,0,0.3); padding: 12px 0; border-bottom: 2px solid var(--primary-color); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* LOGO */
+.logo-container { display: flex; align-items: center; text-decoration: none; }
+.nav-logo { height: 52px; border-radius: 8px; object-fit: contain; background: white; padding: 5px 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+
+.nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+.nav-link { color: white; text-decoration: none; font-weight: 600; font-size: 0.93rem; transition: var(--transition); }
+.nav-link:hover { color: var(--accent-mint); }
+.hamburger { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+
+/* HERO SECTION - FONDO CLARO Y LUMINOSO */
+.hero { height: 100vh; background-color: var(--bg-dark); background-image: url('https://res.cloudinary.com/bw6ntjnu/image/upload/v1792113835/haportada.png'); background-size: cover; background-position: center; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 23, 42, 0.72) 0%, rgba(2, 132, 199, 0.65) 100%); }
+.hero-content { position: relative; z-index: 1; color: white; max-width: 900px; padding: 0 20px; }
+.hero-badge { display: inline-block; background: rgba(16, 185, 129, 0.25); border: 1px solid var(--accent-mint); color: var(--accent-mint); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+.hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 3.3rem; line-height: 1.25; margin-bottom: 20px; font-weight: 800; text-shadow: 0 3px 10px rgba(0,0,0,0.5); min-height: 130px; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.95; max-width: 780px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+.hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+/* FRANJA DE BENEFICIOS */
+.trust-banner { background-color: var(--primary-color); padding: 35px 0; border-bottom: 4px solid var(--accent-mint); }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; text-align: center; }
+.trust-item i { font-size: 2.4rem; color: var(--accent-mint); margin-bottom: 12px; }
+.trust-item h4 { color: white; font-size: 1.05rem; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+
+/* SERVICIOS */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.service-card { background: white; padding: 35px 25px; border-radius: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: var(--transition); border: 1px solid #e2e8f0; border-bottom: 4px solid var(--primary-color); }
+.service-card.highlight-card { border: 2px solid var(--accent-mint); }
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-bottom-color: var(--accent-mint); }
+.service-icon { width: 65px; height: 65px; border-radius: 50%; background: var(--accent-light); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; transition: var(--transition); }
+.service-card:hover .service-icon { background: var(--primary-color); color: white; }
+.service-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: var(--secondary-color); margin-bottom: 12px; font-weight: 700; }
+.service-card p { font-size: 0.95rem; color: var(--text-light); }
+
+/* OFERTAS TARJETAS ELEGANTES */
+.offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+.offer-card { background: white; border-radius: 20px; padding: 35px 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; text-align: center; position: relative; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
+.offer-card.popular { border: 2px solid var(--accent-mint); transform: scale(1.03); }
+.offer-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+.offer-tag { position: absolute; top: 15px; right: 15px; background: var(--accent-light); color: var(--primary-color); font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 15px; font-family: 'Montserrat', sans-serif; }
+.popular-tag { background: var(--accent-mint); color: #022c22; }
+.offer-icon { width: 70px; height: 70px; border-radius: 50%; background: var(--accent-light); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 10px auto 20px; }
+.offer-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: var(--secondary-color); font-weight: 800; margin-bottom: 8px; }
+.offer-price { font-size: 2.5rem; font-weight: 900; color: var(--primary-color); margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+.offer-price .currency { font-size: 1rem; font-weight: 600; color: var(--text-light); }
+.offer-card p { font-size: 0.92rem; color: var(--text-light); margin-bottom: 25px; line-height: 1.5; }
+
+.btn-offer { background: var(--primary-color); color: white; border-radius: 25px; padding: 12px 20px; text-decoration: none; font-weight: 700; transition: var(--transition); display: inline-flex; justify-content: center; align-items: center; gap: 8px; }
+.btn-offer:hover { background: var(--primary-hover); transform: translateY(-2px); }
+.btn-offer-highlight { background: var(--accent-mint); color: #022c22; border-radius: 25px; padding: 12px 20px; text-decoration: none; font-weight: 800; transition: var(--transition); display: inline-flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+.btn-offer-highlight:hover { background: #059669; color: white; transform: translateY(-2px); }
+
+/* GALERÍA DE MUESTRA DE TRABAJO REAL (FOTOS ROPA) */
+.work-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.work-gallery-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; transition: var(--transition); }
+.work-gallery-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); border-color: var(--primary-color); }
+.work-img { width: 100%; height: 280px; object-fit: cover; display: block; border-bottom: 3px solid var(--accent-mint); }
+.work-card-info { padding: 25px; }
+.work-card-info h3 { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--secondary-color); margin-bottom: 10px; font-weight: 700; }
+.work-card-info p { font-size: 0.93rem; color: var(--text-light); line-height: 1.6; }
+
+/* GALERÍA DE FACHADA DEL LOCAL */
+.facade-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.facade-item { position: relative; border-radius: 16px; overflow: hidden; height: 250px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 2px solid white; }
+.facade-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+.facade-label { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, transparent 60%); opacity: 0; transition: var(--transition); display: flex; align-items: flex-end; padding: 20px; }
+.facade-label span { color: white; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; }
+.facade-item:hover .facade-img { transform: scale(1.08); }
+.facade-item:hover .facade-label { opacity: 1; }
+
+/* CONTACTO Y MAPA QUITO */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+.contact-info-column { display: flex; flex-direction: column; gap: 20px; justify-content: space-between; }
+
+.contact-card-link, .contact-card-address, .social-links-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 22px 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-card-link:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3);
+}
+
+.contact-icon-wrap {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.contact-card-link:hover .contact-icon-wrap { background: white; color: var(--primary-color); }
+.contact-card-link h3, .contact-card-address h3, .social-links-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; margin-bottom: 4px; font-weight: 700; }
+.contact-detail { font-size: 0.95rem; opacity: 0.9; line-height: 1.5; }
+
+.social-links-card { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+.social-btn { background: #1877f2; color: white; padding: 10px 24px; border-radius: 25px; text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; margin-top: 5px; }
+.social-btn:hover { background: #0c63d4; transform: translateY(-2px); }
+
+.map-container { width: 100%; min-height: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid var(--primary-color); }
+
+/* FOOTER Y WHATSAPP FLOTANTE */
+.footer { padding: 30px; background: var(--bg-darker); text-align: center; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-logo { height: 40px; border-radius: 6px; background: white; padding: 4px 10px; margin-bottom: 15px; }
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; z-index: 999; text-decoration: none; box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4); transition: var(--transition); }
+.whatsapp-float:hover { transform: scale(1.12); }
+
+/* ANIMACIONES FADE-IN */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 992px) {
+    .offer-card.popular { transform: scale(1); }
+    .contact-layout { grid-template-columns: 1fr; }
+    .map-container { min-height: 350px; }
+    .hero-content h1 { font-size: 2.5rem; min-height: 90px; }
+}
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav-links { position: absolute; top: 100%; left: -100%; width: 100%; background: var(--bg-dark); flex-direction: column; text-align: center; padding: 20px 0; gap: 20px; transition: var(--transition); box-shadow: 0 10px 15px rgba(0,0,0,0.3); }
+    .nav-links.active { left: 0; }
+    .navbar { background: var(--bg-dark); padding: 12px 0; }
+    .hero-content h1 { font-size: 1.9rem; }
+    .hero-btns { flex-direction: column; }
+    .btn { width: 100%; }
+}
